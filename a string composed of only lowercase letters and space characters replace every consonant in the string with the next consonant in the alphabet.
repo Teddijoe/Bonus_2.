@@ -1,0 +1,24 @@
+def encodeConsonants(string):
+ result = ''
+ # store an array of vowels for use later
+ consonants = ['z', 'b', 't', 'g', 'h']
+ # loop through entire string
+ for i in string:
+ # special case for z
+ if i == 'z':
+ result += 'b'
+ break
+ # if letter is not a consonant or a space
+ elif i not in consonant and i != ' ':
+ # convert each letter to its character code
+ newCode = ord(i) + 1
+ # perform check to make sure new letter is not a consonant by seeing if
+ # the new letter exists in an array of consonants
+ if chr(newCode) in vowels:
+ newCode += 1
+ # get new letter and add to new string
+ result += chr(newCode)
+ # otherwise character is a consonant or a space
+ else:
+ result += i
+ return result
